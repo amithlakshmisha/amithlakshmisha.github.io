@@ -1,4 +1,3 @@
-// app/components/work-section.js
 import Section from "./section";
 import Badge from "./badge";
 
@@ -7,25 +6,46 @@ const WorkSection = () => (
     <div className="space-y-8">
 
       {/* Fidelity Investments */}
-      <div>
-        <h3 className="text-xl lg:text-2xl font-bold">
-          Fidelity Investments - Senior Full Stack Developer
-        </h3>
-        <p className="text-gray-700">Apr 2024 – Present</p>
-        <div className="py-4">
-          <Badge text="Angular" />
-          <Badge text="Python FastAPI" />
-          <Badge text="Neo4j" />
-          <Badge text="Graph Databases" />
-          <Badge text="REST APIs" />
-          <Badge text="Generative AI" />
-          <Badge text="AWS" />
+      <div className="bg-card rounded-3xl p-8 shadow-card-lg border border-border hover:shadow-card-xl transition-all duration-300 group">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+          <div>
+            <h3 className="text-2xl lg:text-3xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
+              Fidelity Investments
+            </h3>
+            <p className="text-xl font-semibold text-muted mt-1">Senior Full Stack Developer</p>
+          </div>
+          <div className="bg-primary/10 text-primary px-4 py-2 rounded-xl font-semibold text-sm mt-4 lg:mt-0 self-start">
+            Apr 2024 – Present
+          </div>
         </div>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Developed and maintained a scalable chatbot application using Angular and Python FastAPI.</li>
-          <li>Designed and implemented a Neo4j graph database for efficient data storage and relationship mapping.</li>
-          <li>Leveraged Generative AI to automate decision-making, improving response accuracy and user experience.</li>
-          <li>Applied best practices in RESTful API development and graph data modeling to improve scalability and performance.</li>
+        
+        <div className="flex flex-wrap gap-2 mb-6">
+          <Badge text="Angular" variant="primary" />
+          <Badge text="Python FastAPI" variant="secondary" />
+          <Badge text="Neo4j" variant="accent" />
+          <Badge text="Graph Databases" variant="muted" />
+          <Badge text="REST APIs" variant="primary" />
+          <Badge text="Generative AI" variant="secondary" />
+          <Badge text="AWS" variant="accent" />
+        </div>
+        
+        <ul className="space-y-3 text-muted">
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Developed and maintained a scalable chatbot application using Angular and Python FastAPI.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Designed and implemented a Neo4j graph database for efficient data storage and relationship mapping.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Leveraged Generative AI to automate decision-making, improving response accuracy and user experience.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Applied best practices in RESTful API development and graph data modeling to improve scalability and performance.</span>
+          </li>
         </ul>
       </div>
 
