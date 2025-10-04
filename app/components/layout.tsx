@@ -21,7 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => (
           <li><Link href="#about">About</Link></li>
           <li><Link href="#work">Work</Link></li>
           {/* <li><Link href="#projects">Projects</Link></li> */}
-          <a href="/AmithLakshmishaFullStackNY.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="/AmithLakshmishaDetailedResumeNY.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <ThemeToggle/>
         </ul>
       </nav>
