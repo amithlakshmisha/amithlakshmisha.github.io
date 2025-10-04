@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => (
       {children}
     </main>
     <footer className="p-4 text-center">
-      <p>&copy; {new Date().getFullYear()} Anvitha Lakshmisha. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} Amith Lakshmisha. All rights reserved.</p>
     </footer>
   </div>
 );
