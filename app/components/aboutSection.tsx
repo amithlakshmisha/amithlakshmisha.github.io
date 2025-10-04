@@ -59,7 +59,7 @@ const AboutSection = () => (
         <div className="bg-card rounded-3xl p-8 shadow-card-lg border border-border hover:shadow-card-xl transition-all duration-300">
           <h3 className="text-xl font-bold mb-4 text-primary">What Drives Me</h3>
           <p className="text-muted leading-relaxed">
-            I'm passionate about creating technology solutions that make a meaningful difference. Whether it's building AI-powered applications or optimizing user experiences, I believe in the power of code to solve real-world problems.
+            I&apos;m passionate about creating technology solutions that make a meaningful difference. Whether it&apos;s building AI-powered applications or optimizing user experiences, I believe in the power of code to solve real-world problems.
           </p>
         </div>
       </div>
