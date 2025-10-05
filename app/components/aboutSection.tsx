@@ -6,7 +6,7 @@ const AboutSection = () => (
       <div className="space-y-6">
         <div className="bg-card rounded-3xl p-8 shadow-card-lg border border-border hover:shadow-card-xl transition-all duration-300">
           <p className="text-lg leading-relaxed text-muted">
-            I am a dedicated <span className="text-primary font-semibold">Full Stack Engineer</span> with expertise in modern web technologies, including React, Angular, Node.js, and Python. Skilled in both frontend and backend development, I focus on building scalable, user-friendly applications that deliver real impact.
+            <span className="text-primary font-semibold">Full Stack Engineer</span> with expertise in modern web technologies, including React, Angular, Node.js, and Python. Skilled in both frontend and backend development, I focus on building scalable, user-friendly applications that deliver real impact.
           </p>
         </div>
         
