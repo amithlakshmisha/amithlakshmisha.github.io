@@ -2,7 +2,7 @@ const ContactMe = () => (
   <div className="flex space-x-4">
     {/* LinkedIn */}
     <a
-      href="https://www.linkedin.com/in/amith-lakshmisha/"
+      href="https://www.linkedin.com/in/amithlakshmisha/"
       target="_blank"
       rel="noopener noreferrer"
       className="text-muted hover:text-primary transition-all duration-300 hover:scale-110 transform"
