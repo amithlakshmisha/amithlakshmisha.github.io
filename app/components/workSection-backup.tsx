@@ -50,60 +50,30 @@ const WorkSection = () => (
       </div>
 
       {/* Flipt LLC */}
-      <div className="bg-card rounded-3xl p-8 shadow-card-lg border border-border hover:shadow-card-xl transition-all duration-300 group">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-          <div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
-              Flipt LLC
-            </h3>
-            <p className="text-xl font-semibold text-muted mt-1">Senior Full Stack Developer</p>
-          </div>
-          <div className="bg-secondary/10 text-secondary px-4 py-2 rounded-xl font-semibold text-sm mt-4 lg:mt-0 self-start">
-            Nov 2021 – Mar 2024
-          </div>
+      <div>
+        <h3 className="text-xl lg:text-2xl font-bold">
+          Flipt LLC - Senior Full Stack Developer
+        </h3>
+        <p className="text-gray-700">Nov 2021 – Mar 2024</p>
+        <div className="py-4">
+          <Badge text="React" />
+          <Badge text="Streamlit" />
+          <Badge text="Couchbase" />
+          <Badge text="N1QL" />
+          <Badge text="REST APIs" />
+          <Badge text="JSON Rules Engine" />
+          <Badge text="CircleCI" />
+          <Badge text="Airflow" />
+          <Badge text="Python" />
         </div>
-        
-        <div className="flex flex-wrap gap-2 mb-6">
-          <Badge text="React" variant="primary" />
-          <Badge text="Streamlit" variant="secondary" />
-          <Badge text="Couchbase" variant="accent" />
-          <Badge text="N1QL" variant="muted" />
-          <Badge text="REST APIs" variant="primary" />
-          <Badge text="JSON Rules Engine" variant="secondary" />
-          <Badge text="CircleCI" variant="accent" />
-          <Badge text="Airflow" variant="muted" />
-          <Badge text="Python" variant="primary" />
-        </div>
-        
-        <ul className="space-y-3 text-muted">
-          <li className="flex items-start space-x-3">
-            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-            <span>Built a self-service adjudication tool for large pharmaceutical corporations.</span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-            <span>Developed React SPA screens reducing concierge response times by <span className="font-semibold text-secondary">50%</span>.</span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-            <span>Architected an AI-powered Q&A portal using OpenAI's API and Streamlit.</span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-            <span>Implemented RBAC with React for multiple users, roles, and organizations.</span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-            <span>Built REST APIs for approval processes using JSON rules and chaining for multi-level approvals.</span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-            <span>Engineered CI/CD pipelines with CircleCI to automate testing, builds, and deployments.</span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-            <span>Created Airflow jobs in Python to automate drug list generation for each organization.</span>
-          </li>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>Built a self-service adjudication tool for large pharmaceutical corporations.</li>
+          <li>Developed React SPA screens reducing concierge response times by 50%.</li>
+          <li>Architected an AI-powered Q&A portal using OpenAI’s API and Streamlit.</li>
+          <li>Implemented RBAC with React for multiple users, roles, and organizations.</li>
+          <li>Built REST APIs for approval processes using JSON rules and chaining for multi-level approvals.</li>
+          <li>Engineered CI/CD pipelines with CircleCI to automate testing, builds, and deployments.</li>
+          <li>Created Airflow jobs in Python to automate drug list generation for each organization.</li>
         </ul>
       </div>
 
