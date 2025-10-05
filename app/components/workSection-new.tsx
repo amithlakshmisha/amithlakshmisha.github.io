@@ -86,7 +86,7 @@ const WorkSection = () => (
           </li>
           <li className="flex items-start space-x-3">
             <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-            <span>Architected an AI-powered Q&A portal using OpenAI's API and Streamlit.</span>
+            <span>Architected an AI-powered Q&A portal using OpenAI&apos;s API and Streamlit.</span>
           </li>
           <li className="flex items-start space-x-3">
             <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
