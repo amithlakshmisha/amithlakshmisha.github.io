@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 180" preserveAspectRatio="xMidYMid slice">
+  <g fill="none" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.9">
+    <!-- pitch boundary -->
+    <rect x="6" y="6" width="108" height="168" />
+    <!-- halfway line -->
+    <line x1="6" y1="90" x2="114" y2="90" />
+    <!-- center circle + spot -->
+    <circle cx="60" cy="90" r="16" />
+    <circle cx="60" cy="90" r="1.2" fill="#ffffff" stroke="none" />
+    <!-- top penalty area -->
+    <rect x="27" y="6" width="66" height="30" />
+    <rect x="45" y="6" width="30" height="12" />
+    <circle cx="60" cy="24" r="1.2" fill="#ffffff" stroke="none" />
+    <path d="M 49.4 36 A 16 16 0 0 0 70.6 36" />
+    <!-- bottom penalty area -->
+    <rect x="27" y="144" width="66" height="30" />
+    <rect x="45" y="162" width="30" height="12" />
+    <circle cx="60" cy="156" r="1.2" fill="#ffffff" stroke="none" />
+    <path d="M 49.4 144 A 16 16 0 0 1 70.6 144" />
+    <!-- corner arcs -->
+    <path d="M 6 10 A 4 4 0 0 0 10 6" />
+    <path d="M 110 6 A 4 4 0 0 0 114 10" />
+    <path d="M 114 170 A 4 4 0 0 0 110 174" />
+    <path d="M 10 174 A 4 4 0 0 0 6 170" />
+    <!-- goals -->
+    <rect x="51" y="2" width="18" height="4" />
+    <rect x="51" y="174" width="18" height="4" />
+  </g>
+</svg>
