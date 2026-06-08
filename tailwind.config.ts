@@ -16,15 +16,20 @@ const config: Config = {
         card: "rgb(var(--card-bg-rgb))",
         border: "rgb(var(--border-rgb))",
         hover: "rgb(var(--hover-bg-rgb))",
+        grass: "rgb(var(--grass-a))",
+        led: "rgb(var(--led-on-rgb))",
+        "led-green": "rgb(var(--led-green-rgb))",
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        scoreboard: ['Orbitron', 'Inter', 'sans-serif'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "gradient-primary": "linear-gradient(135deg, rgb(var(--primary-color-rgb)), rgb(var(--secondary-color-rgb)))",
+        "gradient-primary": "linear-gradient(135deg, rgb(var(--primary-color-rgb)), rgb(var(--led-green-rgb)))",
+        "gradient-led": "linear-gradient(135deg, rgb(var(--secondary-color-rgb)), rgb(var(--led-green-rgb)))",
         "gradient-card": "linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))",
       },
       animation: {
@@ -34,6 +39,9 @@ const config: Config = {
         'slide-in-right': 'slideInRight 0.8s ease-out',
         'bounce-in': 'bounceIn 1s ease-out',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'ball': 'ballBounce 1.6s ease-in-out infinite',
+        'spin-ball': 'spinBall 8s linear infinite',
+        'flicker': 'floodlight 4s ease-in-out infinite',
       },
       spacing: {
         '18': '4.5rem',

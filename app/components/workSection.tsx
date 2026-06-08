@@ -2,8 +2,81 @@ import Section from "./section";
 import Badge from "./badge";
 
 const WorkSection = () => (
-  <Section id="work" title="Work Experience">
-    <div className="space-y-8">
+  <Section id="work" title="Player Highlights">
+    <div className="grid md:grid-cols-2 gap-6 items-start">
+
+      {/* Mela: current (featured, full width) */}
+      <div className="md:col-span-2 bg-card rounded-3xl p-8 shadow-card-lg border-2 border-secondary/50 hover:shadow-card-xl transition-all duration-300 group">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+          <div>
+            <h3 className="text-2xl lg:text-3xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">
+              <a href="https://visitmela.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                Mela
+              </a>
+            </h3>
+            <p className="text-xl font-semibold text-muted mt-1">Co-Founder &amp; Chief Technology Officer (CTO)</p>
+            <a
+              href="https://visitmela.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-secondary hover:text-primary transition-colors mt-2"
+            >
+              🔗 visitmela.com
+            </a>
+          </div>
+          <div className="bg-secondary/15 text-secondary px-4 py-2 rounded-xl font-semibold text-sm mt-4 lg:mt-0 self-start font-scoreboard tracking-wide">
+            ● Nov 2025 – Present
+          </div>
+        </div>
+
+        <p className="text-muted leading-relaxed mb-5">
+          Mela is an <span className="text-secondary font-semibold">AI agent to hire creative freelancers</span>.
+        </p>
+
+        <div className="flex flex-wrap gap-2 mb-6">
+          <Badge text="AI Agents" variant="primary" />
+          <Badge text="AI Matchmaking" variant="secondary" />
+          <Badge text="Semantic Search" variant="accent" />
+          <Badge text="Azure AI Foundry" variant="muted" />
+          <Badge text="Azure" variant="primary" />
+          <Badge text="WhatsApp" variant="secondary" />
+          <Badge text="Interakt" variant="accent" />
+          <Badge text="Webhooks" variant="muted" />
+          <Badge text="Next.js" variant="primary" />
+          <Badge text="Node.js" variant="secondary" />
+        </div>
+
+        <ul className="space-y-3 text-muted">
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Lead all of technology and engineering as <span className="font-semibold text-secondary">CTO</span>, owning architecture, the product roadmap, and the founding tech team.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Built the <span className="font-semibold text-secondary">AI matchmaking engine</span> that pairs brands with the right creatives based on skill, style, and project fit, powered by semantic search over a vetted freelancer database.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Designed the <span className="font-semibold text-secondary">vetting pipeline</span> that lets the agent actually evaluate creative work, combining multi-platform portfolio scraping with multi-pass LLM analysis, discipline-aware extraction across creative buckets (visual design, video, writing, marketing), and vision and video analysis on real portfolio assets.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Built the <span className="font-semibold text-secondary">brand-side agentic flow</span> end to end, from brief intake through discovery, scope generation, proposal sending, and AI-driven negotiation with freelancers.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Built the <span className="font-semibold text-secondary">freelancer intake experience</span>, from multi-platform portfolio scraping (Behance, Canva, Notion, personal sites) to conversational onboarding and live progress feedback while the AI evaluates their work.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Built the agent&apos;s models on <span className="font-semibold text-secondary">Azure AI Foundry</span> and shipped the production infrastructure on Azure across dev and prod environments.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+            <span>Integrated <span className="font-semibold text-secondary">WhatsApp</span> into the agent&apos;s workflow, with outbound proposal sends via Interakt templates and an inbound webhook pipeline that lets the agent hold multi-turn negotiations with freelancers automatically.</span>
+          </li>
+        </ul>
+      </div>
 
       {/* Fidelity Investments */}
       <div className="bg-card rounded-3xl p-8 shadow-card-lg border border-border hover:shadow-card-xl transition-all duration-300 group">
@@ -15,7 +88,7 @@ const WorkSection = () => (
             <p className="text-xl font-semibold text-muted mt-1">Senior Full Stack Developer</p>
           </div>
           <div className="bg-primary/10 text-primary px-4 py-2 rounded-xl font-semibold text-sm mt-4 lg:mt-0 self-start">
-            Apr 2024 – Present
+            Apr 2024 – Oct 2025
           </div>
         </div>
         

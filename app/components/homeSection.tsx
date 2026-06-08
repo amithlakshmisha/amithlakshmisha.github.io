@@ -8,10 +8,11 @@ const HomeSection = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(100);
 
+  // scoreboard ticker messages
   const texts = useMemo(() => [
-    "Skilled in Full stack development.",
-    "Committed to continuous learning in AI.",
-    "Passionate about Web development.",
+    "SKILLED IN FULL STACK DEVELOPMENT",
+    "REACT · ANGULAR · NODE · PYTHON",
+    "BUILDING AI-POWERED SOLUTIONS",
   ], []);
 
   useEffect(() => {
@@ -19,10 +20,10 @@ const HomeSection = () => {
       const currentText = texts[textIndex];
       if (isDeleting) {
         setDisplayedText(currentText.substring(0, displayedText.length - 1));
-        setTypingSpeed(50);
+        setTypingSpeed(40);
       } else {
         setDisplayedText(currentText.substring(0, displayedText.length + 1));
-        setTypingSpeed(100);
+        setTypingSpeed(90);
       }
 
       if (!isDeleting && displayedText === currentText) {
@@ -40,45 +41,72 @@ const HomeSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center py-20">
       <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl w-full">
-        {/* Text Content */}
+        {/* Scoreboard + text */}
         <div className="space-y-8 animate-slide-in-left lg:order-1 order-2 text-center lg:text-left">
-          <div className="space-y-4">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+
+          {/* Stadium LED scoreboard */}
+          <div className="led-panel rounded-2xl p-5 sm:p-6 animate-flicker">
+            <div className="flex items-center justify-between text-xs font-scoreboard tracking-widest text-white/60 mb-3">
+              <span>⚽ MATCHDAY</span>
+              <span className="led-green">● LIVE</span>
+            </div>
+
+            <div className="grid grid-cols-3 items-center gap-2 mb-4">
+              <div className="text-center">
+                <p className="text-[10px] sm:text-xs font-scoreboard text-white/50 mb-1">HOME</p>
+                <p className="led-digits text-lg sm:text-2xl font-extrabold leading-none">AMITH</p>
+              </div>
+              <div className="text-center">
+                <p className="led-digits text-3xl sm:text-5xl font-black leading-none">3<span className="text-white/40 mx-1">:</span>0</p>
+              </div>
+              <div className="text-center">
+                <p className="text-[10px] sm:text-xs font-scoreboard text-white/50 mb-1">CHALLENGES</p>
+                <p className="led-digits text-lg sm:text-2xl font-extrabold leading-none">SOLVED</p>
+              </div>
+            </div>
+
+            {/* ticker */}
+            <div className="bg-black/40 rounded-lg px-3 py-2 border border-led/20">
+              <p className="font-scoreboard text-xs sm:text-sm min-h-[1.5em] flex items-center justify-center">
+                <span className="led-green mr-1">{displayedText}</span>
+                <span className="led-digits animate-pulse">_</span>
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <h1 className="text-5xl lg:text-7xl font-bold leading-tight font-scoreboard">
               <span className="gradient-text">Amith</span>
               <br />
               <span className="text-foreground">Lakshmisha</span>
             </h1>
-            <div className="h-16 flex items-center justify-center lg:justify-start">
-              <p className="text-xl lg:text-2xl text-muted min-h-[2em] flex items-center">
-                <span className="mr-2">{displayedText}</span>
-                <span className="text-primary animate-pulse text-2xl font-bold">|</span>
-              </p>
-            </div>
+            <p className="text-lg text-muted font-semibold tracking-wide">
+              ⚽ Full Stack Developer · Squad No. <span className="text-secondary">10</span>
+            </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a 
+            <a
               href="#work"
-              className="bg-gradient-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-glow transition-all duration-300 hover:scale-105 transform"
+              className="bg-gradient-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-glow transition-all duration-300 hover:scale-105 transform font-scoreboard"
             >
-              View My Work
+              View Highlights
             </a>
-            <a 
+            <a
               href="#about"
-              className="border-2 border-primary text-primary px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 transform"
+              className="border-2 border-secondary text-secondary px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-secondary hover:text-black transition-all duration-300 hover:scale-105 transform font-scoreboard"
             >
-              About Me
+              Player Profile
             </a>
           </div>
-          
-          {/* Floating Elements */}
-          <div className="hidden lg:block absolute top-1/4 right-1/4 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-pulse-slow"></div>
-          <div className="hidden lg:block absolute bottom-1/4 left-1/4 w-16 h-16 bg-secondary/20 rounded-full blur-xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
         </div>
 
-        {/* Profile Image */}
+        {/* Profile / player card */}
         <div className="flex justify-center lg:order-2 order-1 animate-slide-in-right">
           <div className="relative group">
+            {/* bouncing soccer ball */}
+            <div className="absolute -top-6 -right-2 text-5xl z-20 animate-ball select-none" aria-hidden>⚽</div>
+
             <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
             <div className="relative">
               <Image
@@ -94,8 +122,13 @@ const HomeSection = () => {
                 }}
                 priority
               />
-              {/* Decorative ring */}
-              <div className="absolute inset-0 rounded-full border-4 border-primary/20 group-hover:border-primary/40 transition-colors duration-300"></div>
+              {/* spinning chalk ring */}
+              <div className="absolute inset-0 rounded-full border-4 border-dashed border-secondary/40 group-hover:border-secondary/70 transition-colors duration-300 animate-spin-ball"></div>
+            </div>
+
+            {/* captain's badge */}
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 led-panel rounded-full px-5 py-1.5">
+              <span className="led-digits font-scoreboard text-sm font-bold">CAPTAIN</span>
             </div>
           </div>
         </div>

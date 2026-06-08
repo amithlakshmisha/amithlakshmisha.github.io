@@ -35,31 +35,31 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <ContactMe />
             </div>
             <div className="flex items-center space-x-8 animate-slide-in-right">
-              <ul className="hidden md:flex space-x-8 text-lg font-medium">
+              <ul className="hidden md:flex space-x-8 text-lg font-medium font-scoreboard">
                 <li>
-                  <Link 
-                    href="#about" 
-                    className="text-muted hover:text-primary transition-colors duration-200 hover:scale-105 transform"
+                  <Link
+                    href="#about"
+                    className="text-muted hover:text-secondary transition-colors duration-200 hover:scale-105 transform"
                   >
-                    About
+                    Profile
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="#work" 
-                    className="text-muted hover:text-primary transition-colors duration-200 hover:scale-105 transform"
+                  <Link
+                    href="#work"
+                    className="text-muted hover:text-secondary transition-colors duration-200 hover:scale-105 transform"
                   >
-                    Work
+                    Highlights
                   </Link>
                 </li>
                 <li>
-                  <a 
-                    href="/AmithLakshmishaDetailedResumeNY.pdf" 
-                    target="_blank" 
+                  <a
+                    href="/AmithLakshmishaDetailedResumeNY.pdf"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gradient-primary text-white px-4 py-2 rounded-xl font-semibold hover:shadow-glow transition-all duration-300 hover:scale-105 transform"
                   >
-                    Resume
+                    Team Sheet
                   </a>
                 </li>
               </ul>
@@ -75,14 +75,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </main>
       
-      <footer className="bg-card border-t border-border">
+      <footer className="bg-card/90 backdrop-blur border-t-2 border-secondary/40">
         <div className="container mx-auto px-6 py-8">
           <div className="text-center">
+            <p className="font-scoreboard text-sm text-secondary tracking-widest mb-2">
+              ⚽ FULL TIME · THANKS FOR WATCHING ⚽
+            </p>
             <p className="text-muted text-sm">
               &copy; {new Date().getFullYear()} Amith Lakshmisha. All rights reserved.
             </p>
             <p className="text-muted text-xs mt-2">
-              Built with Next.js, TypeScript, and Tailwind CSS
+              Built with Next.js, TypeScript &amp; Tailwind CSS — on a pitch of pure code
             </p>
           </div>
         </div>
