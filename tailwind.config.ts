@@ -21,8 +21,9 @@ const config: Config = {
         "led-green": "rgb(var(--led-green-rgb))",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        scoreboard: ['Orbitron', 'Inter', 'sans-serif'],
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'var(--font-body)', 'sans-serif'],
+        scoreboard: ['var(--font-led)', 'var(--font-body)', 'sans-serif'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
