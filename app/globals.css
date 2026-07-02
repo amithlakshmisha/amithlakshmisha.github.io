@@ -2,11 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&display=swap');
-
 /* ===========================================================
-   MATCHDAY THEME  ⚽
-   light = daytime kickoff · dark = floodlit night match
+   MATCHDAY PROGRAMME THEME  ⚽
+   floodlit night match · chalk lines · team-sheet cards
    =========================================================== */
 
 :root {
@@ -35,26 +33,26 @@
 }
 
 [data-theme="dark"] {
-  --foreground-rgb: 232, 237, 228;       /* soft warm off-white */
+  --foreground-rgb: 235, 240, 232;       /* soft warm off-white */
   --background-start-rgb: 16, 36, 24;
   --background-end-rgb: 10, 26, 17;
 
-  --primary-color-rgb: 86, 168, 110;     /* natural grass green */
-  --secondary-color-rgb: 210, 170, 96;   /* muted gold */
-  --accent-color-rgb: 194, 120, 96;      /* muted clay */
-  --muted-rgb: 156, 170, 156;            /* sage gray */
-  --card-bg-rgb: 17, 38, 26;             /* dark green panel */
-  --border-rgb: 38, 64, 47;
-  --hover-bg-rgb: 24, 50, 34;
+  --primary-color-rgb: 110, 190, 134;    /* natural grass green */
+  --secondary-color-rgb: 222, 181, 104;  /* trophy gold */
+  --accent-color-rgb: 202, 128, 102;     /* muted clay */
+  --muted-rgb: 172, 186, 172;            /* sage gray */
+  --card-bg-rgb: 14, 32, 22;             /* dark green panel */
+  --border-rgb: 44, 74, 55;
+  --hover-bg-rgb: 22, 46, 32;
 
   --grass-a: 17, 50, 30;
   --grass-b: 14, 43, 26;
   --line-rgb: 226, 235, 224;
   --line-opacity: 0.14;
 
-  --led-bg-rgb: 9, 22, 14;
-  --led-on-rgb: 214, 176, 104;           /* warm gold LED */
-  --led-green-rgb: 122, 190, 132;        /* soft green */
+  --led-bg-rgb: 8, 20, 13;
+  --led-on-rgb: 222, 181, 104;           /* warm gold LED */
+  --led-green-rgb: 128, 196, 140;        /* soft green */
 }
 
 * {
@@ -66,7 +64,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: rgb(var(--foreground-rgb));
   min-height: 100vh;
   line-height: 1.6;
@@ -114,6 +112,11 @@ body > * {
   z-index: 1;
 }
 
+::selection {
+  background: rgba(var(--secondary-color-rgb), 0.35);
+  color: rgb(var(--foreground-rgb));
+}
+
 /* Custom scrollbar — pitch chalk */
 ::-webkit-scrollbar {
   width: 10px;
@@ -136,7 +139,7 @@ body > * {
   }
 
   .font-scoreboard {
-    font-family: 'Orbitron', 'Inter', sans-serif;
+    font-family: var(--font-led), var(--font-body), sans-serif;
     letter-spacing: 0.04em;
   }
 
@@ -184,7 +187,7 @@ body > * {
   }
 
   .led-digits {
-    font-family: 'Orbitron', monospace;
+    font-family: var(--font-led), monospace;
     color: rgb(var(--led-on-rgb));
     text-shadow: 0 0 6px rgba(var(--led-on-rgb), 0.65), 0 0 18px rgba(var(--led-on-rgb), 0.35);
     letter-spacing: 0.08em;
@@ -198,6 +201,125 @@ body > * {
   .chalk-underline {
     background: rgba(var(--line-rgb), 0.85);
     box-shadow: 0 0 10px rgba(var(--line-rgb), 0.5);
+  }
+
+  /* -------- team-sheet cards (the main content panels) -------- */
+  .sheet-card {
+    position: relative;
+    background:
+      linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0) 40%),
+      rgba(var(--card-bg-rgb), 0.97);
+    border: 1px solid rgba(var(--border-rgb), 0.9);
+    border-radius: 1.25rem;
+    box-shadow: 0 16px 34px -14px rgba(0, 0, 0, 0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    overflow: hidden;
+  }
+  .sheet-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(var(--kit, var(--secondary-color-rgb)), 0.55);
+    box-shadow:
+      0 24px 44px -16px rgba(0, 0, 0, 0.65),
+      0 0 34px -6px rgba(var(--kit, var(--secondary-color-rgb)), 0.22);
+  }
+  /* kit-colored top stripe, like the trim on a jersey collar */
+  .sheet-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      rgba(var(--kit, var(--secondary-color-rgb)), 0.95),
+      rgba(var(--kit, var(--secondary-color-rgb)), 0.25)
+    );
+  }
+
+  /* club-crest style monogram disc */
+  .crest {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 9999px;
+    font-family: var(--font-display), sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    color: rgb(6, 16, 10);
+    background:
+      radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 55%),
+      rgb(var(--kit, var(--secondary-color-rgb)));
+    border: 2px solid rgba(0, 0, 0, 0.28);
+    box-shadow: 0 6px 14px -4px rgba(0, 0, 0, 0.55);
+  }
+
+  /* season / date lozenge, scoreboard style */
+  .season-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    color: rgba(var(--kit, var(--secondary-color-rgb)), 1);
+    background: rgba(var(--kit, var(--secondary-color-rgb)), 0.12);
+    border: 1px solid rgba(var(--kit, var(--secondary-color-rgb)), 0.35);
+    white-space: nowrap;
+  }
+
+  /* chalk tick bullets */
+  .chalk-li {
+    position: relative;
+    padding-left: 1.35rem;
+  }
+  .chalk-li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 0.6rem;
+    height: 2px;
+    border-radius: 2px;
+    background: rgba(var(--kit, var(--secondary-color-rgb)), 0.9);
+    box-shadow: 0 0 6px rgba(var(--kit, var(--secondary-color-rgb)), 0.5);
+  }
+
+  /* reveal-on-scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s cubic-bezier(0.22, 0.8, 0.3, 1), transform 0.7s cubic-bezier(0.22, 0.8, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-fade-in, .animate-slide-up, .animate-slide-in-left,
+  .animate-slide-in-right, .animate-bounce-in, .animate-ball,
+  .animate-spin-ball, .animate-flicker {
+    animation: none;
   }
 }
 

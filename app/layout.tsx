@@ -1,9 +1,28 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Barlow, Barlow_Condensed, Orbitron } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
 
-const inter = Inter({ subsets: ["latin"] });
+const barlow = Barlow({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["500", "700", "900"],
+  variable: "--font-led",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Amith Lakshmisha - Full Stack Developer",
@@ -53,8 +72,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark">
-      <body className={inter.className}>{children} <Analytics /></body>
+    <html lang="en" data-theme="dark" className={`${barlow.variable} ${barlowCondensed.variable} ${orbitron.variable}`}>
+      <body className={barlow.className}>{children} <Analytics /></body>
     </html>
   );
 }
